@@ -5,7 +5,7 @@
       <thead>
         <tr>
           <th scope="col">Original URL</th>
-          <th scope="col">Shortened ver.</th>
+          <th scope="col">Short ver.</th>
           <th scope="col">Click count</th>
           <th scope="col">Action</th>
         </tr>

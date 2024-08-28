@@ -1,4 +1,4 @@
-# to-do-list-app
+# url-shortener
 
 This template should help get you started developing with Vue 3 in Vite.
 

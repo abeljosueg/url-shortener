@@ -10,7 +10,7 @@ const urlSchema = new mongoose.Schema({
     required: true,
     unique: true
   }
-});
+}, { timestamps: true });
 
 const Url = mongoose.model('Url', urlSchema);
 
