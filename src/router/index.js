@@ -5,8 +5,8 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: () => import('@/views/MainView.vue')
+      name: 'urlshortener',
+      component: () => import('@/views/UrlShortenerView.vue')
     },
     {
       path: '/myurls',
