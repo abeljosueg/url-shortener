@@ -22,7 +22,7 @@ class UrlController {
         existingUrl = await Url.findOne({ code });
       }
       // Crear un nuevo documento en la base de datos
-      const newUrl = new Url({ originalUrl: url, code });
+      const newUrl = new Url({ originalUrl: url, code, clicks: 0 });
       await newUrl.save();
       // Construir la URL acortada
       const shortUrl = `http://localhost:3000/api/${code}`;
@@ -38,6 +38,8 @@ class UrlController {
       const { code } = req.params;
       const url = await Url.findOne({ code });
       if (url) {
+        url.clicks = (url.clicks || 0) + 1;
+        await url.save();
         res.redirect(url.originalUrl);
       } else {
         res.status(404).json({ error: 'URL not found' });

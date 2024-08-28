@@ -9,6 +9,9 @@ const urlSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true
+  },
+  clicks: {
+    type: Number,
   }
 }, { timestamps: true });
 
