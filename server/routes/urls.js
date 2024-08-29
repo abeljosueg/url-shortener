@@ -13,4 +13,9 @@ router.get('/:code', async (req, res) => {
   await urlController.redirectToOriginalUrl(req, res);
 });
 
+router.get('/info/:code', async (req, res) => {
+  await urlController.getUrlInfo(req, res);
+});
+
+
 export default router;

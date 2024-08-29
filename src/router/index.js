@@ -6,12 +6,12 @@ const router = createRouter({
     {
       path: '/',
       name: 'urlshortener',
-      component: () => import('@/views/UrlShortenerView.vue')
+      component: () => import('@/views/URLShortenerView.vue')
     },
     {
       path: '/myurls',
       name: 'myurls',
-      component: () => import('@/views/MyUrlsView.vue')
+      component: () => import('@/views/URLClickCounter.vue')
     },
   ]
 })

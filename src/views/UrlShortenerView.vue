@@ -2,13 +2,16 @@
   <div class="text-center w-100">
     <h2 class="fw-bold pb-3">URL Shortener</h2>
     <div class="input-group mb-3">
-      <input type="text" class="form-control rounded-start-pill" v-model="url" placeholder="https://www.example.com/some/long/url" aria-describedby="button-addon2">
-      <button class="btn btn-primary rounded-end-pill" type="button" id="button-addon2" @click="shortenUrl">Shorten</button>
+      <input type="text" class="form-control rounded-start-pill" v-model="url" placeholder="Enter your URL here..." aria-describedby="button-addon2">
+      <button class="btn btn-dark rounded-end-pill" type="button" id="button-addon2" @click="shortenUrl">Shorten</button>
     </div>
-    <h6>Here is your shortened URL:</h6>
-    <p v-if="shortUrl"><a :href="shortUrl" target="_blank">{{ shortUrl }}</a></p>
-    <p class="text-body-secondary" v-else>You have not entered a URL yet<br></p>
-    <button class="btn btn-primary rounded-pill" @click="copyUrl">{{ buttonText }}</button>
+    <div v-if="shortUrl">
+      <h6>Here is your shortened URL:</h6>
+      <div class="d-flex justify-content-center align-items-baseline">
+        <p><a :href="shortUrl" target="_blank">{{ shortUrl }}</a></p>
+        <button class="btn btn-dark rounded-pill ms-2" @click="copyUrl">{{ buttonText }}</button>
+      </div>
+    </div>
   </div>
 </template>
 

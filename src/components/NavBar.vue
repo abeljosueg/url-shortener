@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <router-link to="/" :class="getActiveClass('/')">URL Shortener</router-link>
-          <router-link to="/myurls" :class="getActiveClass('/myurls')">My URLs</router-link>
+          <router-link to="/myurls" :class="getActiveClass('/myurls')">URL Click Counter</router-link>
         </div>
       </div>
     </div>
