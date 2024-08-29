@@ -1,10 +1,8 @@
 <template>
   <div class="text-center w-100">
-    <h2 class="fw-bold pb-3">URL Shortener</h2>
-    <div class="input-group mb-3">
-      <input type="text" class="form-control rounded-start-pill" v-model="url" placeholder="Enter your URL here..." aria-describedby="button-addon2">
-      <button class="btn btn-dark rounded-end-pill" type="button" id="button-addon2" @click="shortenUrl">Shorten</button>
-    </div>
+    <TitleComponent :text="'URL Shortener'" />
+    <DescriptionComponent :text="'This powerful tool allows you to shorten long, cumbersome URLs into concise and easy-to-share links. The URL Shortener helps you save space and make your links more manageable. Simply enter your original URL, and the tool will generate a shortened version that redirects to the original link.'" />
+    <InputGroup v-model="url" placeholder="Enter your URL here..." :buttonText="'Shorten'" @click="shortenUrl" @update:value="url = $event" />
     <div v-if="shortUrl">
       <h6>Here is your shortened URL:</h6>
       <div class="d-flex justify-content-center align-items-baseline">
@@ -16,6 +14,10 @@
 </template>
 
 <script setup>
+import TitleComponent from '@/components/TitleComponent.vue';
+import DescriptionComponent from '@/components/DescriptionComponent.vue';
+import InputGroup from '@/components/InputGroup.vue';
+
 import axios from 'axios';
 import { ref } from 'vue';
 

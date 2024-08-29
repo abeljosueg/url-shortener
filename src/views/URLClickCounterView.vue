@@ -1,12 +1,10 @@
 <template>
   <div class="text-center w-100">
-    <h2 class="fw-bold pb-3">URL Click Counter</h2>
-    <div class="input-group mb-3">
-      <input type="text" class="form-control rounded-start-pill" v-model="url" placeholder="Enter your shortened URL here..." aria-describedby="button-addon2">
-      <button class="btn btn-dark rounded-end-pill" type="button" id="button-addon2" @click="getUrlInfo">Track URL</button>
-    </div>
+    <TitleComponent :text="'URL Click Counter'"/>
+    <DescriptionComponent :text="'This simple and easy-to-use tracker shows you the number of clicks on your shortened URL, as well as the date of the last click.'"/>
+    <InputGroup v-model="url" placeholder="Enter your shortened URL here..." :buttonText="'Track URL'" @click="getUrlInfo" @update:value="url = $event" />
     <div v-if="loaded">
-      <h6>Total of clicks made:</h6>
+      <h6>Click count:</h6>
       <h1 class="fw-bold">{{ urlInfo.clicks }}</h1>
       <h6>Last updated:</h6>
       <p class="text-secondary">{{ formatDate(urlInfo.updatedAt) }}</p>
@@ -16,6 +14,10 @@
 </template>
 
 <script setup>
+import TitleComponent from '@/components/TitleComponent.vue';
+import DescriptionComponent from '@/components/DescriptionComponent.vue';
+import InputGroup from '@/components/InputGroup.vue';
+
 import { ref } from 'vue';
 import axios from 'axios';
 

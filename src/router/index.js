@@ -11,7 +11,7 @@ const router = createRouter({
     {
       path: '/myurls',
       name: 'myurls',
-      component: () => import('@/views/URLClickCounter.vue')
+      component: () => import('@/views/URLClickCounterView.vue')
     },
   ]
 })
