@@ -9,8 +9,8 @@ const router = createRouter({
       component: () => import('@/views/URLShortenerView.vue')
     },
     {
-      path: '/myurls',
-      name: 'myurls',
+      path: '/clickcounter',
+      name: 'clickcounter',
       component: () => import('@/views/URLClickCounterView.vue')
     },
   ]
